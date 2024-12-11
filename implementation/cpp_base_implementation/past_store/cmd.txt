@@ -1,0 +1,8 @@
+g++ -std=c++11 -I./csv_query2 -o main \
+    main.cpp \
+    CSVLoader.cpp \
+    ElementFilter.cpp \
+    ElementSelect.cpp \
+    Operand.cpp \
+    QueryExecutor.cpp
+

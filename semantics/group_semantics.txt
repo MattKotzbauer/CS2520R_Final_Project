@@ -1,0 +1,44 @@
+// (semantics for where, group by, having, limit, offset)
+
+column_id ::= str
+comparator ::= = | <> | > | < | >= | <=  | 'IN'
+operator ::= comparator | + | - | * | / 
+group_operator ::= MAX | MIN | AVG
+
+operand ::= 
+	column_id
+	| int # (static value)
+	| (operand, operator, operand)
+	| List[operand]
+
+group_operand ::= 
+	(group_operator, column_id)
+	| int # (static value)
+	| (group_operand, operator, group_operand) 
+	| List[group_operand]
+
+element_filter ::= 
+	()
+	| where(element_filter, operand, comparator, operand) # 0: comparison value, 2: desired value
+	| distinct(element_filter)
+	| order_by(element_filter, operand)
+	| limit(element_filter, int)
+
+group_filter ::=
+	()
+	| having(group_filter, group_operand, comparator, group_operand) # 1: comparison value, 3: desired value
+	| order_by(group_filter, group_operand)
+	| limit(group_filter, int)
+
+element_select ::=    
+        (operand, table)
+	| (element_select, element_filter)
+
+group_select ::= 
+	(group_operand, table, operand) # ('group_operand' is the result to display, 'operand' is what we're grouping by)
+	| (group_select, element_filter, group_filter) # (either of the filters can be Unit, in which case query is unfiltered wrt argument)
+
+
+
+
+

@@ -1,0 +1,13 @@
+column_id ::= str
+operator ::= = | <> | > | < | >= | <= | + | - | * | / | 'IN'
+
+
+operand ::= 
+	column_id
+	| int # (static value)
+	| (operand, operator, operand)
+	| List[operand]
+
+query ::= 
+	(operand, table)
+	| where(query, operand, operand) 
