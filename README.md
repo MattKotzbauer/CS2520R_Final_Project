@@ -1,7 +1,7 @@
 # Matt Kotzbauer - CS2520R Final Project
 ## Query Building and Auxiliary Indexing on CSV Files
 
-Implementation of final project for CS2790R. 
+Implementation of CS2520R final project.
 
 **File Locations:**
 
@@ -13,4 +13,5 @@ Implementation of final project for CS2790R.
 * C++ Implementation + (Attempted) Indexing: `~/implementation/auxiliary_indexing_build`
 
 TODO: 
+* ensure all necessary parts are copied over / up-to-date from old repo
 * write query execution instructions (Python, C++, aux. structure building)
