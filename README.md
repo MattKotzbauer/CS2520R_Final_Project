@@ -1,7 +1,5 @@
 # CS2520R_Final_Project
-(readme incomplete but promise I'll finish it before eod the 12th 🙏)
-
-
+## Query Building and Auxiliary Indexing on CSV Files
 TODO: 
 * overview of folder / file purposes
 * guide for executing sample queries (C++, Python, aux. structure building)
